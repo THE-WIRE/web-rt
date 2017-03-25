@@ -8,5 +8,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class JoinComponentClass {
     
+       
 
 }

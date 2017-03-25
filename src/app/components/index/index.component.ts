@@ -14,6 +14,6 @@ export class IndexComponentClass {
   }
 
   JoinTeam(){
-    this.router.navigate(['navigate'])
+    this.router.navigate(['join'])
   }
 }
