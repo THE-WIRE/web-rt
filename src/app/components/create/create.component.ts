@@ -9,10 +9,12 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class CreateComponentClass {
     texty: any;
+
     constructor(private af: AngularFire){
-        af.database.list('/active/kjLOGRTSOiTioVUJlJHBkjjJHJBD/code').subscribe(data => {
-              this.texty = data;
-        });
+        // af.database.object('/active/kjLOGRTSOiTioVUJlJHBkjjJHJBD/').subscribe(data => {
+        //       this.texty = data.code;
+        //       console.log(data.code);
+        // });
     }
     create(formData) {
          if(formData) {
