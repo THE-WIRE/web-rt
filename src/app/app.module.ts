@@ -7,13 +7,16 @@ import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { JoinComponentClass} from './components/join/join.component';
 import { IndexComponentClass} from './components/index/index.component';
+import { CreateComponentClass} from './components/create/create.component';
+
 import { appRoutes } from './route';
 
 @NgModule({
   declarations: [
     AppComponent,
     JoinComponentClass,
-    IndexComponentClass
+    IndexComponentClass,
+    CreateComponentClass
   ],
   imports: [
     BrowserModule,
