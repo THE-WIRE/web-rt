@@ -23,7 +23,15 @@ export class CreateComponentClass {
                 const usersList = this.af.database.object('users/' + success.uid);
                 usersList.set(formData)
                     .then((snap) => {
-                        console.log(snap);
+                        const teamList = this.af.database.list('team/' + formData.teamName + '/members');
+                        teamList.push({
+                            member_username: formData.username,
+                            member_uid: success.uid
+                        }).then((snapshot) => {
+
+                        console.log(snapshot);
+                        });
+
                     });
         }).catch(
             (err) => {
