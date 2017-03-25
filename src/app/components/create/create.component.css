@@ -1,0 +1,7 @@
+input[type="text"],input[type="password"],input[type="email"] {
+    border-radius: 0px
+}
+
+.formCreate {
+    margin-top: 5%;
+}
