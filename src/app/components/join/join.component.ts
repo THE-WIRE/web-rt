@@ -1,5 +1,4 @@
 import {Component} from '@angular/core'
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
     selector: "<join-component></join-component>",
@@ -8,6 +7,5 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class JoinComponentClass {
     
-       
 
 }
