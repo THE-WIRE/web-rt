@@ -1,30 +1,53 @@
 import {Component} from '@angular/core'
 import {nodemailer} from 'nodemailer/lib/nodemailer'
-import {AngularFire, FirebaseListObservable} from 'angularfire2'
-
+import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2'
 
 @Component({
     selector: "<join-component></join-component>",
     templateUrl: './join.component.html'
 })
 export class JoinComponentClass {
+    uid
+    item: FirebaseObjectObservable<any>;
+    constructor (private af: AngularFire){              
+    }
 
-    // items: FirebaseListObservable<any>;
-    // constructor(af: AngularFire) {
-    //     this.items = af.database.list('/users')
-    // }
 
-    // userExistsCallBack(uid, exists){
-    //     if(exists){
-    //         alert('user' + uid + 'exists!');
-    //     } else {
-    //         alert('user' + uid + 'does not exist!');
-    //     }
-    // }
 
-    // checkIfUserExists(uid){
-    //    if(uid == member_uid){
-        
-    //    }
-    // }
+    join(formData, event: Event) {
+        event.preventDefault();
+         if(formData) {
+            this.af.auth.createUser({
+                email: formData.email,
+                password: formData.passwd
+            }).then(
+                    (success) => {
+
+                        this.af.database.object('team/' + formData.teamId).subscribe(data => {
+                                this.item = data.team_name;
+                                this.uid = success.uid;
+
+                                 const usersList = this.af.database.object('users/' + success.uid);
+
+                                    usersList.set({
+                                        username: formData.username,
+                                        email: formData.email,
+                                        passwd: formData.passwd,
+                                        teamName: this.item,
+                                        teamId: formData.teamId
+                                    }).then((snap) => {
+
+                                                
+
+                                                
+                                }); 
+            });
+        })
+
+        const teamList = this.af.database.list('team/' + formData.teamId + '/members/joined');
+                                                teamList.push({
+                                                        join_uid: this.uid
+                                                });
+    }
+    }
 }
