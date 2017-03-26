@@ -5,9 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: '<index-component></index-component>',
   templateUrl: './index.component.html'
 })
+
 export class IndexComponentClass {
   constructor(private activatedRoute:ActivatedRoute, private router:Router) {
-    
+
   }
   CreateTeamRedirect() {
    this.router.navigate(['create'])
@@ -17,3 +18,4 @@ export class IndexComponentClass {
     this.router.navigate(['join'])
   }
 }
+
