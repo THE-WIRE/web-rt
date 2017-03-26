@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -9,13 +10,15 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class CreateComponentClass {
     texty: any;
-
-    constructor(private af: AngularFire){
+    linkGen;
+    show: boolean = false;
+    constructor(private af: AngularFire, private activatedRoute:ActivatedRoute, private router:Router){
         // af.database.object('/active/kjLOGRTSOiTioVUJlJHBkjjJHJBD/').subscribe(data => {
         //       this.texty = data.code;
         //       console.log(data.code);
         // });
     }
+
     create(formData) {
          if(formData) {
             formData.teamId = btoa(formData.teamName + Date.now());
@@ -36,11 +39,23 @@ export class CreateComponentClass {
 
                                     const teamNameObs = this.af.database.object('team/' + formData.teamId);
                                     teamNameObs.update({ team_name: formData.teamName });
+
+                                    this.genLink(formData.email,formData.teamId);
                             });
             }).catch(
                 (err) => {
                 console.log(err);
             });
         }
+    }
+
+    genLink(email, hashKey){
+        this.linkGen = hashKey;
+        this.show = true;
+        this.sendMail(email, 'TEAM TOKEN SHARING', 'THIS IS YOUR TEAM TOKEN : ' + hashKey);
+    }
+
+    sendMail = function(emailId,subject,message){
+        window.open("mailto:"+ emailId + "?subject=" + subject+"&body="+message,"_self");
     }
 }

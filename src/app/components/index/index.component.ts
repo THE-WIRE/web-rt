@@ -7,11 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class IndexComponentClass {
-<<<<<<< HEAD
-
-=======
   constructor(private activatedRoute:ActivatedRoute, private router:Router) {
-    
+
   }
   CreateTeamRedirect() {
    this.router.navigate(['create'])
@@ -20,6 +17,5 @@ export class IndexComponentClass {
   JoinTeam(){
     this.router.navigate(['join'])
   }
->>>>>>> 1aec9211fd59aa72ecc3a3d12b8ff7d23464a558
 }
 
