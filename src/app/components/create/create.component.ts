@@ -10,19 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CreateComponentClass {
     texty: any;
-<<<<<<< HEAD
+    linkGen: any;
+    show: boolean = false;
     constructor(private af: AngularFire){
         // af.database.list('/active/kjLOGRTSOiTioVUJlJHBkjjJHJBD/code').subscribe(data => {
         //       this.texty = data;
-=======
-    linkGen;
-    show: boolean = false;
-    constructor(private af: AngularFire, private activatedRoute:ActivatedRoute, private router:Router){
-        // af.database.object('/active/kjLOGRTSOiTioVUJlJHBkjjJHJBD/').subscribe(data => {
-        //       this.texty = data.code;
-        //       console.log(data.code);
->>>>>>> 42a81f03b6f11b8a7751252fbca60b09e44dcef4
-        // });
+
     }
 
     create(formData) {
