@@ -35,6 +35,7 @@ Done!
 ![screenshot_20170327_135556](https://cloud.githubusercontent.com/assets/10581846/24347560/54f2cc9a-12f6-11e7-88b1-296e83ce09e7.png)
 ![screenshot_20170327_135625](https://cloud.githubusercontent.com/assets/10581846/24347567/57172b06-12f6-11e7-82a8-d578e8477061.png)
 
-<h4> Once the team leader and all the team members have joined the team. You can use our extension from </h4> ![Code Collaboration Extension](https://github.com/THE-WIRE/RT-Code-Collab) <h4> link <h4>
+<h4> Once the team leader and all the team members have joined the team. You can use our extension from link</h4> 
+![Code Collaboration Extension](https://github.com/THE-WIRE/RT-Code-Collab)
 
 ## Enjoy collaborating
