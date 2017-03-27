@@ -43,11 +43,6 @@ export class JoinComponentClass {
                                 }); 
             });
         })
-
-        const teamList = this.af.database.list('team/' + formData.teamId + '/members/joined');
-                                                teamList.push({
-                                                        join_uid: this.uid
-                                                });
     }
     }
 }
