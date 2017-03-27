@@ -9,6 +9,9 @@ import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'ang
 export class JoinComponentClass {
     uid
     item: FirebaseObjectObservable<any>;
+    
+    show: boolean = false;
+
     constructor (private af: AngularFire){              
     }
 
@@ -36,10 +39,7 @@ export class JoinComponentClass {
                                         teamName: this.item,
                                         teamId: formData.teamId
                                     }).then((snap) => {
-
-                                                
-
-                                                
+                                            this.show = true;
                                 }); 
             });
         })
