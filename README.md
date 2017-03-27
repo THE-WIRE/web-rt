@@ -29,6 +29,6 @@ Goto Join Team, fill in the form with your credentials and use the team id token
 Done!
 ```
 
-<h4> Once the team leader and all the team members have joined the team. You can use our extension from [link]`https://github.com/THE-WIRE/RT-Code-Collab` link <h4>
+<h4> Once the team leader and all the team members have joined the team. You can use our extension from [Code Collaboration Extension](https://github.com/THE-WIRE/RT-Code-Collab) link <h4>
 
 ## Enjoy collaborating
